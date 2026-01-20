@@ -1,4 +1,4 @@
-package com.neversion.learning_spring.service;
+package com.neversion.learning_spring.product.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,8 +10,8 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.neversion.learning_spring.persistence.ProductRepository;
-import com.neversion.learning_spring.model.Product;
+import com.neversion.learning_spring.product.model.Product;
+import com.neversion.learning_spring.product.persistence.ProductRepository;
 
 @ExtendWith(MockitoExtension.class)
 class ProductServiceTest {

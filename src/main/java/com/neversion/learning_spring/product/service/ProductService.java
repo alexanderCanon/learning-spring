@@ -1,11 +1,11 @@
-package com.neversion.learning_spring.service;
+package com.neversion.learning_spring.product.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.neversion.learning_spring.model.Product;
-import com.neversion.learning_spring.persistence.ProductRepository;
+import com.neversion.learning_spring.product.model.Product;
+import com.neversion.learning_spring.product.persistence.ProductRepository;
 
 @Service
 public class ProductService {

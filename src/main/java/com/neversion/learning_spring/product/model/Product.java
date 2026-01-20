@@ -1,4 +1,4 @@
-package com.neversion.learning_spring.model;
+package com.neversion.learning_spring.product.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

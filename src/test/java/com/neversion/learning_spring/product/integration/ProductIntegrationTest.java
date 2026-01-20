@@ -1,4 +1,4 @@
-package com.neversion.learning_spring.integration;
+package com.neversion.learning_spring.product.integration;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -8,7 +8,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.neversion.learning_spring.persistence.ProductRepository;
+import com.neversion.learning_spring.product.persistence.ProductRepository;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;

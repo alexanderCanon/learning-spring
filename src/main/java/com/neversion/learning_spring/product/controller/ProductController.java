@@ -1,4 +1,4 @@
-package com.neversion.learning_spring.controller;
+package com.neversion.learning_spring.product.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neversion.learning_spring.exceptions.ResourceNotFoundException;
-import com.neversion.learning_spring.model.Product;
-import com.neversion.learning_spring.persistence.ProductRepository;
+import com.neversion.learning_spring.product.model.Product;
+import com.neversion.learning_spring.product.persistence.ProductRepository;
 
 @RestController
 @RequestMapping("/api/products")
