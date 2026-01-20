@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.neversion.learning_spring.exceptions.ResourceNotFoundException;
 import com.neversion.learning_spring.product.model.Product;
 import com.neversion.learning_spring.product.persistence.ProductRepository;
+import com.neversion.learning_spring.product.dto.ProductRequest;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/products")
@@ -38,7 +41,11 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(product));
+    public ResponseEntity<Product> createProduct(@Valid @RequestBody ProductRequest productRequest) {
+        Product newProduct = new Product();
+        newProduct.setName(productRequest.getName());
+        newProduct.setPrice(productRequest.getPrice());
+        Product savedProduct = productRepository.save(newProduct);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
     }
 }
