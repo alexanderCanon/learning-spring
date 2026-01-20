@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.neversion.learning_spring.exceptions.ResourceNotFoundException;
 import com.neversion.learning_spring.model.Product;
 import com.neversion.learning_spring.persistence.ProductRepository;
 
@@ -31,9 +32,9 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        return productRepository.findById(id)
-                .map(product -> ResponseEntity.ok(product))
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + id));
+        return ResponseEntity.ok(product);
     }
 
     @PostMapping
