@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neversion.learning_spring.exceptions.ResourceNotFoundException;
 import com.neversion.learning_spring.product.model.Product;
 import com.neversion.learning_spring.product.persistence.ProductRepository;
+import com.neversion.learning_spring.exceptions.ResourceNotFoundException;
 import com.neversion.learning_spring.product.dto.ProductRequest;
 
 import jakarta.validation.Valid;

@@ -13,6 +13,12 @@ public class ErrorResponse {
         this.date = date;
     }
 
+    public ErrorResponse(String message, int statusCode) {
+        this.message = message;
+        this.statusCode = String.valueOf(statusCode);
+        this.date = LocalDateTime.now();
+    }
+
     public String getMessage() {
         return message;
     }
