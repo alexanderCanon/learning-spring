@@ -21,9 +21,9 @@ public class ProductController {
     private List<Product> products = new ArrayList<>();
 
     public ProductController() {
-        products.add(new Product(1, "Product 1", 10.0));
-        products.add(new Product(2, "Product 2", 20.0));
-        products.add(new Product(3, "Product 3", 30.0));
+        products.add(new Product(1L, "Product 1", 10.0));
+        products.add(new Product(2L, "Product 2", 20.0));
+        products.add(new Product(3L, "Product 3", 30.0));
     }
 
     @GetMapping
@@ -32,9 +32,9 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable int id) {
+    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         for (Product p : products) {
-            if (p.getId() == id) {
+            if (p.getId().equals(id)) {
                 return ResponseEntity.ok(p);
             }
         }
