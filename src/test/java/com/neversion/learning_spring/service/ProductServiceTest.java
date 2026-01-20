@@ -38,10 +38,9 @@ class ProductServiceTest {
         verify(productRepository).save(product);
     }
 
-    // @Test
-    // void shouldGetAllProducts() {
-
-    // }
+    @Test
+    void shouldGetAllProducts() {
+    }
 
     // @Test
     // void shouldGetProductById() {
