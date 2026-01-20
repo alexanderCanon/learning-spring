@@ -32,7 +32,7 @@ public class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         return productRepository.findById(id)
-                .map(ResponseEntity::ok)
+                .map(product -> ResponseEntity.ok(product))
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
