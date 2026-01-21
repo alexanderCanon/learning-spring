@@ -20,12 +20,12 @@ public class GetProductService implements GetProductUseCase {
 
     @Override
     public List<Product> getAllProducts() {
-        return productRepositoryPort.findAll();
+        return productRepositoryPort.getAll();
     }
 
     @Override
     public Product getProduct(Long id) {
-        return productRepositoryPort.findById(id)
+        return productRepositoryPort.getById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + id));
     }
 }

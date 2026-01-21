@@ -22,9 +22,9 @@ public class ProductMapper {
 
     public ProductResponse toProductResponse(Product product) {
         return new ProductResponse(
-                product.getId(),
-                product.getName(),
-                product.getPrice());
+                product.id(),
+                product.name(),
+                product.price());
     }
 
     public List<ProductResponse> toProductResponseList(List<Product> products) {
@@ -35,11 +35,12 @@ public class ProductMapper {
                 .collect(Collectors.toList());
     }
 
-    public void updateProductFromRequest(Product product, ProductRequest productRequest) {
-        if (product == null || productRequest == null)
-            return;
-        product.setName(productRequest.getName());
-        product.setPrice(productRequest.getPrice());
-    }
+    // public void updateProductFromRequest(Product product, ProductRequest
+    // productRequest) {
+    // if (product == null || productRequest == null)
+    // return;
+    // product.setName(productRequest.getName());
+    // product.setPrice(productRequest.getPrice());
+    // }
 
 }

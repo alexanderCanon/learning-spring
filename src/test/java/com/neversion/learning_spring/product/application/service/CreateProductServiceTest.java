@@ -33,7 +33,7 @@ class CreateProductServiceTest {
         Product result = createProductService.createProduct(product);
 
         // ASSERT
-        assertEquals("Laptop", result.getName());
+        assertEquals("Laptop", result.name());
 
         verify(productRepositoryPort).save(product);
     }

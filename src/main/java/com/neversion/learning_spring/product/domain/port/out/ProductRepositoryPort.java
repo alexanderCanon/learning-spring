@@ -6,14 +6,14 @@ import java.util.Optional;
 import com.neversion.learning_spring.product.domain.model.Product;
 
 public interface ProductRepositoryPort {
+
     Product save(Product product);
 
-    Optional<Product> findById(Long id);
+    Optional<Product> getById(Long id);
 
-    List<Product> findAll();
+    List<Product> getAll();
 
-    // Product update(Long id, Product product);
-    Product update(Long id);
+    Optional<Product> update(Long id, Product product);
 
     void delete(Long id);
 }

@@ -27,24 +27,25 @@ public class ProductRepositoryAdapter implements ProductRepositoryPort {
     }
 
     @Override
-    public List<Product> findAll() {
+    public List<Product> getAll() {
         return jpaProductRepository.findAll().stream()
                 .map(productMapper::toDomain)
                 .toList();
     }
 
     @Override
-    public Optional<Product> findById(Long id) {
+    public Optional<Product> getById(Long id) {
         return jpaProductRepository.findById(id)
                 .map(productMapper::toDomain);
     }
 
     @Override
-    public Product update(Long id) {
+    public Product update(Long id, Product product) {
         ProductEntity productEntity = jpaProductRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
-        jpaProductRepository.save(productEntity);
-        return productMapper.toDomain(productEntity);
+        ProductEntity newProduct = productMapper.toEntity(product);
+        ProductEntity updatedProduct = jpaProductRepository.save(newProduct);
+        return productMapper.toDomain(updatedProduct);
     }
 
     @Override

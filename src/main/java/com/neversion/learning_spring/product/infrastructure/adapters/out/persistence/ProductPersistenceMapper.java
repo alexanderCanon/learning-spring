@@ -17,9 +17,9 @@ public class ProductPersistenceMapper {
 
     public ProductEntity toEntity(Product product) {
         return new ProductEntity(
-                product.getId(),
-                product.getName(),
-                product.getPrice(),
-                product.isActive());
+                product.id(),
+                product.name(),
+                product.price(),
+                product.active());
     }
 }

@@ -74,12 +74,10 @@ public class ProductController {
     @PutMapping("/{id}")
     public ResponseEntity<ProductResponse> updateProduct(@PathVariable Long id,
             @Valid @RequestBody ProductRequest productRequest) {
-        Product product = updateProductUseCase.updateProduct(id);
+        Product product = productMapper.toProduct(productRequest);
+        Product updatedProduct = updateProductUseCase.updateProduct(id, product);
         // .orElseThrow(() -> new ResourceNotFoundException("Product not found with id:
         // " + id));
-
-        productMapper.updateProductFromRequest(product, productRequest);
-        Product updatedProduct = updateProductUseCase.updateProduct(id);
         ProductResponse productResponse = productMapper.toProductResponse(updatedProduct);
         return ResponseEntity.ok(productResponse);
     }
