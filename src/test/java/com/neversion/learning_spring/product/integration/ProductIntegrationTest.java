@@ -8,7 +8,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.neversion.learning_spring.product.persistence.ProductRepository;
+import com.neversion.learning_spring.product.infrastructure.adapters.out.persistence.JpaProductRepository;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -23,7 +23,7 @@ class ProductIntegrationTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private ProductRepository productRepository;
+    private JpaProductRepository productRepository;
 
     // public ProductIntegrationTest(MockMvc mockMvc, ProductRepository
     // productRepository) {

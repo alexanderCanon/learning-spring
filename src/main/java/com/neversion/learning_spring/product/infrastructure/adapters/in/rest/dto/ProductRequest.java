@@ -1,4 +1,4 @@
-package com.neversion.learning_spring.product.dto;
+package com.neversion.learning_spring.product.infrastructure.adapters.in.rest.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
