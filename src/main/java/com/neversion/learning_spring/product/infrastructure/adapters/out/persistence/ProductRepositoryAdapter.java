@@ -40,12 +40,12 @@ public class ProductRepositoryAdapter implements ProductRepositoryPort {
     }
 
     @Override
-    public Product update(Long id, Product product) {
+    public Optional<Product> update(Long id, Product product) {
         ProductEntity productEntity = jpaProductRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
         ProductEntity newProduct = productMapper.toEntity(product);
         ProductEntity updatedProduct = jpaProductRepository.save(newProduct);
-        return productMapper.toDomain(updatedProduct);
+        return Optional.ofNullable(productMapper.toDomain(updatedProduct));
     }
 
     @Override
